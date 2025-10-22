@@ -23,7 +23,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<CartMap>({})
 
     useEffect(() => {
-        // Would want to handle JSON parse errors here
+        // Would want to handle JSON parse errors here and maybe even validate schema
         const raw = localStorage.getItem("cart")
         if (raw) {
             const parsed = JSON.parse(raw) as CartMap
